@@ -1,4 +1,4 @@
-# wallet*bank_system*
+wallet*bank_system*
 
 Локальный старт проекта
 
