@@ -1,0 +1,27 @@
+.container {
+  width: 264px;
+  height: 264px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: white;
+}
+
+.PieContainer {
+  margin: 0 auto;
+  padding: 20px;
+  width: 320px;
+}
+
+.pieChart {
+  margin: 0;
+}
+
+/* .PieChart_PieContainer__23F0b {
+  margin: 0 auto;
+} */

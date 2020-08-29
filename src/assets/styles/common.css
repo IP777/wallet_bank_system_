@@ -1,0 +1,14 @@
+@font-face {
+  font-family: HelveticaNeueCyr;
+  src: url(../../assets/fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf);
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --white-color: #ffffff;
+
+  --primary-background: #f8fefd;
+}
