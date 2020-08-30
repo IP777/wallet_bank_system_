@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { checkUserLogin } from '../../redux/operations/app/params';
+import { useSelector, useDispatch } from 'react-redux';
+import { isLoadedSelector } from '../../redux/reducers/app/params';
+import { getInitialData } from '../../redux/operations/app/params';
 
 const Guard = ({ children }) => {
   const dispatch = useDispatch();
+  const isLoaded = useSelector(isLoadedSelector);
 
   useEffect(() => {
-    dispatch(checkUserLogin());
+    dispatch(getInitialData());
   }, []);
 
-  return children;
+  return isLoaded ? children : null;
 };
 
 export default Guard;
