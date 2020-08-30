@@ -6,8 +6,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import { validateEmail } from '../../services/utilites';
 import { ReactComponent as EmailIcon } from '../../assets/email.svg';
 import { ReactComponent as PasswordIcon } from '../../assets/lock.svg';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const Loginization = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -38,7 +37,7 @@ const Loginization = ({ onLogin }) => {
     <form className={styles.form} onSubmit={submitHandle} noValidate>
       <div className={styles.logo} />
       <div className={styles.wallet} />
-      <ToastContainer />
+
       <TextField
         variant="outlined"
         margin="normal"

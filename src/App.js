@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import Guard from './components/Guard/Guard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import GuestRoute from './components/GuestRoute/GuestRoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import NotFoundPage from './pages/NotFoundPage';
 import * as ROUTES from './constants/router';
 import style from './App.module.css';
@@ -31,6 +33,7 @@ const App = () => {
       fallback={<div className={style.loader}>Please wait Loading...</div>}
     >
       <Guard>
+        <ToastContainer />
         <Switch>
           {/* Private routes */}
           <PrivateRoute path={ROUTES.ROOT_ROUTE} exact>
