@@ -21,6 +21,12 @@ const AsyncLogin = lazy(() =>
   import('./pages/LoginPage/LoginPage.js' /* webpackChunkName: "Login-page" */)
 );
 
+const AsyncCurrency = lazy(() =>
+  import(
+    './pages/CurrencyPage/CurrencyPage' /* webpackChunkName: "Login-page" */
+  )
+);
+
 const App = () => {
   return (
     <Suspense
@@ -31,6 +37,7 @@ const App = () => {
         <Route path="/statistics" component={AsyncStatistics} />
         <Route path="/registration" component={AsyncRegistration} />
         <Route path="/login" component={AsyncLogin} />
+        <Route path="/currency" component={AsyncCurrency} />
         <Route component={NotFoundPage} />
       </Switch>
     </Suspense>
