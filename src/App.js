@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Guard from './components/Guard/Guard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import GuestRoute from './components/GuestRoute/GuestRoute';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import NotFoundPage from './pages/NotFoundPage';
 import * as ROUTES from './constants/router';
 import style from './App.module.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 //Асинхронная подгрузка страниц + разделение на чанки
 const AsyncHome = lazy(() =>

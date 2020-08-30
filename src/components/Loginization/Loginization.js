@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styles from './Loginization.module.css';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { validateEmail } from '../../services/utilites';
 import { ReactComponent as EmailIcon } from '../../assets/email.svg';
 import { ReactComponent as PasswordIcon } from '../../assets/lock.svg';
-import { toast } from 'react-toastify';
 
 const Loginization = ({ onLogin }) => {
   const [email, setEmail] = useState('');

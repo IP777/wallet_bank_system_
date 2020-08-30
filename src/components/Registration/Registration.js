@@ -1,8 +1,8 @@
 import React from 'react';
-import './RegisterComponent.css';
+import './Registration.css';
 import { NavLink } from 'react-router-dom';
 
-const RegisterComponent = () => {
+const Registration = () => {
   return (
     <div class="sign-up-wrapper">
       <div className="logo-wrapper">
@@ -52,4 +52,4 @@ const RegisterComponent = () => {
   );
 };
 
-export default RegisterComponent;
+export default Registration;
