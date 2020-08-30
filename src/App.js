@@ -43,13 +43,20 @@ const App = () => {
             <AsyncStatistics />
           </PrivateRoute>
 
-          {/* Only guests routes */}
-          <GuestRoute path={ROUTES.REGISTRATION_ROUTE}>
-            <AsyncRegistration />
-          </GuestRoute>
-          <GuestRoute path={ROUTES.LOGIN_ROUTE}>
-            <AsyncLogin />
-          </GuestRoute>
+
+        {/* Only guests routes */}
+        <GuestRoute path={ROUTES.REGISTRATION_ROUTE}>
+          <AsyncRegistration />
+        </GuestRoute>
+        <GuestRoute path={ROUTES.LOGIN_ROUTE}>
+          <AsyncLogin />
+        </GuestRoute>
+        <PrivateRoute path={ROUTES.CREATE_TRANSACTION}>
+          <div>CREATE</div>
+        </PrivateRoute>
+        {/* <GuestRoute path={ROUTES.STATISTICS_ROUTE}>
+          <AsyncStatistics />
+        </GuestRoute> */}
 
           {/* Errors */}
           <Route component={NotFoundPage} />
