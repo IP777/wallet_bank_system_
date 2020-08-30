@@ -1,6 +1,6 @@
 import React from 'react';
 import EmptyLayout from '../../components/EmptyLayout/EmptyLayout';
-import Registration from '../../components/Registration/Registration';
+import Registration from '../../containers/Registartion';
 
 const RegistrationPage = () => {
   return (
