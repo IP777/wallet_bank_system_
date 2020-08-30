@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Guard from './components/Guard/Guard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import GuestRoute from './components/GuestRoute/GuestRoute';
 import NotFoundPage from './pages/NotFoundPage';
@@ -29,26 +30,28 @@ const App = () => {
     <Suspense
       fallback={<div className={style.loader}>Please wait Loading...</div>}
     >
-      <Switch>
-        {/* Private routes */}
-        <PrivateRoute path={ROUTES.ROOT_ROUTE} exact>
-          <AsyncHome />
-        </PrivateRoute>
-        <PrivateRoute path={ROUTES.STATISTICS_ROUTE}>
-          <AsyncStatistics />
-        </PrivateRoute>
+      <Guard>
+        <Switch>
+          {/* Private routes */}
+          <PrivateRoute path={ROUTES.ROOT_ROUTE} exact>
+            <AsyncHome />
+          </PrivateRoute>
+          <PrivateRoute path={ROUTES.STATISTICS_ROUTE}>
+            <AsyncStatistics />
+          </PrivateRoute>
 
-        {/* Only guests routes */}
-        <GuestRoute path={ROUTES.REGISTRATION_ROUTE}>
-          <AsyncRegistration />
-        </GuestRoute>
-        <GuestRoute path={ROUTES.LOGIN_ROUTE}>
-          <AsyncLogin />
-        </GuestRoute>
+          {/* Only guests routes */}
+          <GuestRoute path={ROUTES.REGISTRATION_ROUTE}>
+            <AsyncRegistration />
+          </GuestRoute>
+          <GuestRoute path={ROUTES.LOGIN_ROUTE}>
+            <AsyncLogin />
+          </GuestRoute>
 
-        {/* Errors */}
-        <Route component={NotFoundPage} />
-      </Switch>
+          {/* Errors */}
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Guard>
     </Suspense>
   );
 };
