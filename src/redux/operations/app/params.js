@@ -1,6 +1,11 @@
 import { loginRequest } from '../../../services/session-api';
 import { registrationRequest } from '../../../services/session-api';
-import { setUserToken, setUserId, setUserName } from '../../actions/app/params';
+import {
+  setUserToken,
+  setUserId,
+  setUserName,
+  setIsLoaded,
+} from '../../actions/app/params';
 import { LOCAL_STORAGE_KEY } from '../../constants/params';
 
 export const login = (credentials) => async (dispatch) => {
@@ -25,16 +30,6 @@ export const logout = () => (dispatch) => {
   localStorage.removeItem(LOCAL_STORAGE_KEY);
 };
 
-export const checkUserLogin = () => (dispatch) => {
-  const userData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-
-  if (userData) {
-    dispatch(setUserToken(userData.token));
-    dispatch(setUserId(userData.user.id));
-    dispatch(setUserName(userData.user.name));
-  }
-};
-
 export const registration = (data) => async (dispatch) => {
   try {
     const response = await registrationRequest(data);
@@ -47,4 +42,16 @@ export const registration = (data) => async (dispatch) => {
   } catch (error) {
     throw new Error(error);
   }
+};
+
+export const getInitialData = () => (dispatch) => {
+  const userData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+
+  if (userData) {
+    dispatch(setUserToken(userData.token));
+    dispatch(setUserId(userData.user.id));
+    dispatch(setUserName(userData.user.name));
+  }
+
+  dispatch(setIsLoaded(true));
 };
