@@ -7,6 +7,7 @@ import Navigation from '../../components/Navigation/Navigation';
 
 import TableTransactions from '../../components/TableTransactions/TableTransactions';
 import ModalPage from '../ModalPage/ModalPage';
+import Currency from '../../containers/Currency';
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       {/* ------------------------ */}
       <ModalPage />
       <TableTransactions />
+      <Currency />
       <Balance />
     </>
   );
