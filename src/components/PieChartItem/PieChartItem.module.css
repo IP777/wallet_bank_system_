@@ -1,0 +1,26 @@
+.wrapper,
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 320px;
+  height: 40px;
+  padding: 0 20px;
+  justify-content: space-between;
+  border-bottom: 2px solid #f3f6f6;
+}
+
+.color {
+  width: 15px;
+  height: 15px;
+  margin-right: 20px;
+}
+
+.title,
+.value {
+  font-size: 14px;
+  font-weight: 400;
+}

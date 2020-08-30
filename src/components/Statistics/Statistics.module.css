@@ -1,12 +1,14 @@
-.header {
-  /* display: flex;
+.mainWrapper {
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background-color: #284060;
-  color: var(--primary-background);
-  height: 60px; */
-  /* visibility: hidden; */
-  min-width: 280px;
+  background-color: var(--primary-background);
+  margin: 0 auto;
+}
+
+.header {
+  min-width: 320px;
   display: none;
 }
 
@@ -15,17 +17,15 @@
   flex-direction: column;
   justify-content: center;
   background-color: var(--primary-background);
-  margin: 0 auto;
-  min-width: 280px;
 }
 
-.diagramme {
+.wrapperDiagramme {
+  width: 100%;
+  width: 100%;
+  margin: 0;
   display: flex;
   justify-content: center;
-  background-color: var(--primary-background);
-  height: 100vh;
-  margin: 0 auto;
-  min-width: 280px;
+  align-items: center;
 }
 
 .filterWrapper {
@@ -42,10 +42,10 @@
   justify-content: center;
   background-color: var(--primary-background);
   margin: 0 auto;
-  min-width: 280px;
 }
 
 /* tablet */
+
 @media (min-width: 549px) {
   .mainWrapper {
     display: flex;
@@ -55,6 +55,8 @@
     margin: 0 auto;
   }
 
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .header {
     height: 60px;
     display: flex;
@@ -62,43 +64,63 @@
     align-items: center;
     background-color: #284060;
     color: var(--primary-background);
-    /* visibility: visible; */
   }
 
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+
   .wrapperDiagramme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 550px;
+    margin: 0;
     box-shadow: 0 0 10px #6b6b6b;
   }
 
+
+
+  .wrapperFS {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 430px;
+    height: 100%;
+  }
+  
   .filterWrapper {
     margin-top: 30px;
     margin-bottom: 30px;
   }
 }
 
-/* Desktop */
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
   .header {
     height: 60px;
-    display: block;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #284060;
     color: var(--primary-background);
-    /* visibility: visible; */
   }
 
   .wrapper {
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0 10px #6b6b6b;
+    justify-content: space-evenly;
   }
 
   .wrapperDiagramme {
     display: flex;
     justify-content: center;
-    min-width: 430px;
-    box-shadow: none;
+    align-items: center;
+    margin: 30px 0;
   }
 
   .wrapperFS {
@@ -111,5 +133,6 @@
 
   .filterWrapper {
     margin-top: 30px;
+    margin-bottom: 30px;
   }
 }

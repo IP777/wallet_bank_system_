@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import style from './Header.module.css';
 
 const Header = ({ userName, isLoggedIn, logout }) => {
   return (
     <div className={style.wrapper}>
-      <NavLink className={style.logo} to="/" />
+      <Link className={style.logo} to="/" />
 
       {isLoggedIn && (
         <div className={style.btnBlock}>
-          <button className={style.loginBtn}>Имя</button>
-          <button className={style.logoutBtn} onClick={logout} />
+          <span className={style.loginBtn}>{userName}</span>
+          <span className={style.logoutBtn} onClick={logout} />
         </div>
       )}
     </div>
