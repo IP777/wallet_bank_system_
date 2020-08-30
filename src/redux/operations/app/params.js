@@ -1,4 +1,5 @@
 import { loginRequest } from '../../../services/session-api';
+import { registrationRequest } from '../../../services/session-api';
 import { setUserToken, setUserId, setUserName } from '../../actions/app/params';
 import { LOCAL_STORAGE_KEY } from '../../constants/params';
 
@@ -31,5 +32,19 @@ export const checkUserLogin = () => (dispatch) => {
     dispatch(setUserToken(userData.token));
     dispatch(setUserId(userData.user.id));
     dispatch(setUserName(userData.user.name));
+  }
+};
+
+export const registration = (data) => async (dispatch) => {
+  try {
+    const response = await registrationRequest(data);
+
+    dispatch(setUserToken(response.token));
+    dispatch(setUserId(response.user.id));
+    dispatch(setUserName(response.user.name));
+
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(response));
+  } catch (error) {
+    throw new Error(error);
   }
 };

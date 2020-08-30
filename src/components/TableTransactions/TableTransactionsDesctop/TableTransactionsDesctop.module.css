@@ -35,3 +35,21 @@
   color: #e08a20;
   font-weight: 700;
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* .tableHead:nth-child(1) {
+    padding-left: 0;
+  } */
+
+  .tableHead:last-child {
+    text-align: right;
+  }
+
+  /* .tableCell:nth-child(1) {
+    padding-left: 0;
+  } */
+
+  .tableCell:last-child {
+    text-align: right;
+  }
+}
