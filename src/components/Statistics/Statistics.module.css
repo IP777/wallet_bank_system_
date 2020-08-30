@@ -9,6 +9,7 @@
   min-width: 280px;
   display: none;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -35,6 +36,7 @@
   margin: 0 auto;
   min-width: 280px;
 }
+
 .statistic {
   display: flex;
   justify-content: center;
@@ -52,6 +54,7 @@
     background-color: var(--primary-background);
     margin: 0 auto;
   }
+
   .header {
     height: 60px;
     display: flex;
@@ -61,9 +64,11 @@
     color: var(--primary-background);
     /* visibility: visible; */
   }
+
   .wrapperDiagramme {
     box-shadow: 0 0 10px #6b6b6b;
   }
+
   .filterWrapper {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -82,6 +87,7 @@
     color: var(--primary-background);
     /* visibility: visible; */
   }
+
   .wrapper {
     display: flex;
     flex-direction: row;
@@ -94,6 +100,7 @@
     min-width: 430px;
     box-shadow: none;
   }
+
   .wrapperFS {
     display: flex;
     flex-direction: column;
@@ -101,6 +108,7 @@
     min-width: 430px;
     height: 100%;
   }
+
   .filterWrapper {
     margin-top: 30px;
   }

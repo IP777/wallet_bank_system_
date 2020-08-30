@@ -45,6 +45,12 @@ const App = () => {
         <GuestRoute path={ROUTES.LOGIN_ROUTE}>
           <AsyncLogin />
         </GuestRoute>
+        <GuestRoute path={ROUTES.CREATE_TRANSACTION}>
+          <div>CREATE</div>
+        </GuestRoute>
+        {/* <GuestRoute path={ROUTES.STATISTICS_ROUTE}>
+          <AsyncStatistics />
+        </GuestRoute> */}
 
         {/* Errors */}
         <Route component={NotFoundPage} />
