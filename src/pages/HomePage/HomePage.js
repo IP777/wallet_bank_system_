@@ -2,7 +2,7 @@ import React from 'react';
 //import style from './HomePage.module.css';
 
 import { Balance } from '../../components/Balance/Balance';
-import Header from '../../components/Header/Header';
+import Header from '../../containers/Logout';
 import Navigation from '../../components/Navigation/Navigation';
 
 import TableTransactions from '../../components/TableTransactions/TableTransactions';
