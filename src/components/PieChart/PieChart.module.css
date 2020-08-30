@@ -1,36 +1,24 @@
-.container {
-  width: 264px;
-  height: 264px;
-  margin: 10px auto;
-  padding: 0;
+.wrapper {
   display: flex;
   justify-content: center;
+}
+
+.innerWrapper {
+  width: 264px;
+  height: 264px;
+  padding: 0;
   align-items: center;
 }
-/* 
-.text {
-  color: white;
-}
 
-.PieContainer {
-  margin: 0 auto;
-  padding: 20px;
-  width: 320px;
-}
-
-.pieChart {
-  margin: 0;
-} */
-
-@media (min-width: 320px) and (max-width: 768px) {
-  .container {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .innerWrapper {
     width: 378px;
     height: 378px;
   }
 }
 
-@media (min-width: 769px) {
-  .container {
+@media (min-width: 1024px) {
+  .innerWrapper {
     width: 334px;
     height: 334px;
   }

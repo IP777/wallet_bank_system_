@@ -17,45 +17,47 @@ function PieChartComponent(props) {
   });
 
   return (
-    <div className={css.container}>
-      <PieChart
-        style={{
-          fontFamily:
-            '"Myriad Pro", -apple-system, Helvetica, Arial, sans-serif',
-          fontSize: '8px',
-          fontWeight: '200',
-          display: 'flex',
-          justifyContent: 'center',
-          alignSelf: 'center',
-        }}
-        center={[50, 50]}
-        viewBoxSize={[100, 100]}
-        data={data}
-        startAngle={0}
-        radius={PieChart.defaultProps.radius}
-        segmentsStyle={{
-          transition: 'stroke .3s',
-          cursor: 'pointer',
-        }}
-        segmentsShift={0.3}
-        animate
-        label={({ dataEntry }) => dataEntry.title}
-        labelPosition={70}
-        labelStyle={{
-          fill: '#fff',
-          opacity: 1,
-          pointerEvents: 'none',
-        }}
-        onClick={(_, index) => {
-          setSelected(index === selected ? undefined : index);
-        }}
-        onMouseOver={(_, index) => {
-          setHovered(index);
-        }}
-        onMouseOut={() => {
-          setHovered(undefined);
-        }}
-      />
+    <div className={css.wrapper}>
+      <div className={css.innerWrapper}>
+        <PieChart
+          style={{
+            fontFamily:
+              '"Myriad Pro", -apple-system, Helvetica, Arial, sans-serif',
+            fontSize: '8px',
+            fontWeight: '200',
+            display: 'flex',
+            justifyContent: 'center',
+            alignSelf: 'center',
+          }}
+          center={[50, 50]}
+          viewBoxSize={[100, 100]}
+          data={data}
+          startAngle={0}
+          radius={PieChart.defaultProps.radius}
+          segmentsStyle={{
+            transition: 'stroke .3s',
+            cursor: 'pointer',
+          }}
+          segmentsShift={0.3}
+          animate
+          label={({ dataEntry }) => dataEntry.title}
+          labelPosition={70}
+          labelStyle={{
+            fill: '#fff',
+            opacity: 1,
+            pointerEvents: 'none',
+          }}
+          onClick={(_, index) => {
+            setSelected(index === selected ? undefined : index);
+          }}
+          onMouseOver={(_, index) => {
+            setHovered(index);
+          }}
+          onMouseOut={() => {
+            setHovered(undefined);
+          }}
+        />
+      </div>
     </div>
   );
 }

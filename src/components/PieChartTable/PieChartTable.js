@@ -14,13 +14,13 @@ const PieChartTable = ({ data }) => (
       ))}
     </div>
     <div className={css.ending}>
-      <div className={css.endingTitle}>Расходы</div>
+      <div className={css.endingTitle}>Расходы:</div>
       <div className={css.endingValue}>
         {data.map((item) => item.value).reduce((acc, reducer) => acc + reducer)}
       </div>
     </div>
     <div className={css.ending}>
-      <div className={css.endingTitle}>Доходы</div>
+      <div className={css.endingTitle}>Доходы:</div>
       <div className={css.end}>Доходы с пропса</div>
     </div>
   </div>

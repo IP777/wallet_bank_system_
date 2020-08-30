@@ -38,3 +38,20 @@
 .endingValue {
   color: #ff6c00;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heading {
+    display: none;
+  }
+
+  .innerWraper {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .ending {
+    justify-content: space-between;
+    margin: 0 0 0 auto;
+  }
+}
