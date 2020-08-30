@@ -51,9 +51,9 @@ const App = () => {
         <GuestRoute path={ROUTES.LOGIN_ROUTE}>
           <AsyncLogin />
         </GuestRoute>
-        <GuestRoute path={ROUTES.CREATE_TRANSACTION}>
+        <PrivateRoute path={ROUTES.CREATE_TRANSACTION}>
           <div>CREATE</div>
-        </GuestRoute>
+        </PrivateRoute>
         {/* <GuestRoute path={ROUTES.STATISTICS_ROUTE}>
           <AsyncStatistics />
         </GuestRoute> */}
