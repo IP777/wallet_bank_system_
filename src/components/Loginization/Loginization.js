@@ -1,23 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Loginization.module.css';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import { NavLink } from 'react-router-dom';
+import { validateEmail } from '../../services/utilites';
 import { ReactComponent as EmailIcon } from '../../assets/email.svg';
 import { ReactComponent as PasswordIcon } from '../../assets/lock.svg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Loginization = ({ onLogin, authenticated }) => {
+const Loginization = ({ onLogin }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const emailChangeHandler = (e) => {
+    const email = e.target.value;
+    console.log();
+    setEmail(email);
+  };
+
+  const passwordChangeHandler = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+
   const submitHandle = (e) => {
     e.preventDefault();
     console.log('submit');
-    //Заглушка для отправки формы
-    onLogin({ email: 'test1232@tt.est', password: 'string' });
+    if (validateEmail(email) && password.length >= 6) {
+      onLogin({ email, password: 'string' });
+    } else {
+      toast('Неправильний пароль або логін. Спробуйте ще раз');
+    }
   };
 
   return (
     <form className={styles.form} onSubmit={submitHandle} noValidate>
       <div className={styles.logo} />
       <div className={styles.wallet} />
+      <ToastContainer />
       <TextField
         variant="outlined"
         margin="normal"
@@ -34,6 +55,8 @@ const Loginization = ({ onLogin, authenticated }) => {
         }}
         name="email"
         type="email"
+        value={email}
+        onChange={emailChangeHandler}
         autoComplete="email"
         className={styles.input}
       />
@@ -43,6 +66,8 @@ const Loginization = ({ onLogin, authenticated }) => {
         required
         fullWidth
         name="password"
+        value={password}
+        onChange={passwordChangeHandler}
         type="password"
         id="password"
         placeholder="Пароль"
@@ -57,16 +82,16 @@ const Loginization = ({ onLogin, authenticated }) => {
         className={styles.input}
       />
 
-      <NavLink className={styles.link} to="/">
+      <Link className={styles.link} to="/">
         На главную
-      </NavLink>
+      </Link>
       <button type="submit" name="login" className={styles.button}>
         Войти
       </button>
       <div className={styles.registry_link}>
-        <NavLink className={styles.link} to="/registration">
+        <Link className={styles.link} to="/registration">
           Регистрация
-        </NavLink>
+        </Link>
       </div>
     </form>
   );
