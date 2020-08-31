@@ -17,14 +17,14 @@ export const registrationRequest = (data) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
-
   }).then((res) => res.json());
-  
- export const getCurrencyRequest = () => {
+};
+
+export const getCurrencyRequest = () => {
   return fetch(API_GET_CURRENCY, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-    }).then((res) => res.json()); 
+  }).then((res) => res.json());
 };

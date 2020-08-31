@@ -1,7 +1,7 @@
 import React from 'react';
 import { Balance } from '../Balance/Balance';
 import Navigation from '../Navigation/Navigation';
-import TableCurrency from '../TableCurrency/TableCurrency';
+import Currency from '../../containers/Currency';
 import styles from './BaseLayout.module.css';
 
 export default function BaseLayout({ children }) {
@@ -10,7 +10,7 @@ export default function BaseLayout({ children }) {
       <div className={styles.sidebar}>
         <Navigation />
         <Balance balance={24000} />
-        <TableCurrency />
+        <Currency />
       </div>
       <div className={styles.main}>{children}</div>
     </div>

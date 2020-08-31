@@ -15,6 +15,5 @@ export const getCurrency = () => async (dispatch) => {
     dispatch(setCurrency(filteredCurrency));
   } catch (error) {
     console.log(error);
-    throw new Error(error);
   }
 };
