@@ -1,45 +1,52 @@
 import React from 'react';
 import style from './TableCurrency.module.css';
+import * as CURRENCY from '../../constants/curency';
 
-const currency = [
-  {
-    currencyName: 'USD',
-    sale: '27.15',
-    buy: '27.45',
-  },
-  {
-    currencyName: 'EUR',
-    sale: '32.15',
-    buy: '33.00',
-  },
-  {
-    currencyName: 'RUB',
-    sale: '00.00',
-    buy: '00.00',
-  },
-];
+const TableCurrency = ({ currency, getCurrency }) => {
+  if (!currency) {
+    getCurrency();
+  }
 
-const TableCurrency = () => (
-  <div className={style.tablewrapper}>
+  console.log(CURRENCY.USD);
+
+  const currencyName = (code) => {
+    switch (code) {
+      case CURRENCY.USD.code:
+        return CURRENCY.USD.name;
+      case CURRENCY.EUR.code:
+        return CURRENCY.EUR.name;
+      case CURRENCY.RUB.code:
+        return CURRENCY.RUB.name;
+      default:
+        break;
+    }
+  };
+
+  return (
+
     <table className={style.table}>
       <thead className={style.tableHead}>
         <tr className={style.tableRaw}>
           <th className={style.tableCellHead}>Валюта</th>
-          <th className={style.tableCellHead}>Продажа</th>
           <th className={style.tableCellHead}>Покупка</th>
+          <th className={style.tableCellHead}>Продажа</th>
         </tr>
       </thead>
       <tbody className={style.tableBody}>
-        {currency.map((item) => (
-          <tr className={style.tableRaw}>
-            <td className={style.tableCell}>{item.currencyName}</td>
-            <td className={style.tableCell}>{item.sale}</td>
-            <td className={style.tableCell}>{item.buy}</td>
-          </tr>
-        ))}
+        {currency &&
+          currency.map((item) => (
+            <tr className={style.tableRaw}>
+              <td className={style.tableCell}>
+                {currencyName(item.currencyCodeA)}
+              </td>
+              <td className={style.tableCell}>{item.rateBuy}</td>
+              <td className={style.tableCell}>{item.rateSell}</td>
+            </tr>
+          ))}
       </tbody>
     </table>
-  </div>
-);
+  );
+};
+
 
 export default TableCurrency;

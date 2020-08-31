@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 
 import TableTransactions from '../../components/TableTransactions/TableTransactions';
 import ModalPage from '../ModalPage/ModalPage';
+import Currency from '../../containers/Currency';
 
 import BaseLayout from '../../components/BaseLayout/BaseLayout';
 
@@ -12,11 +13,11 @@ const HomePage = () => {
   return (
     <>
       <Header />
-
       <BaseLayout>
         <TableTransactions />
         <ModalPage />
       </BaseLayout>
+
     </>
   );
 };
