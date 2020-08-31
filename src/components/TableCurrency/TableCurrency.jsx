@@ -23,6 +23,7 @@ const TableCurrency = ({ currency, getCurrency }) => {
   };
 
   return (
+
     <table className={style.table}>
       <thead className={style.tableHead}>
         <tr className={style.tableRaw}>
@@ -46,5 +47,6 @@ const TableCurrency = ({ currency, getCurrency }) => {
     </table>
   );
 };
+
 
 export default TableCurrency;

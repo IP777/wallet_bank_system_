@@ -10,11 +10,21 @@ export const loginRequest = (data) => {
   }).then((res) => res.json());
 };
 
-export const getCurrencyRequest = () => {
+export const registrationRequest = (data) => {
+  return fetch(`${API_URL}/api/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+
+  }).then((res) => res.json());
+  
+ export const getCurrencyRequest = () => {
   return fetch(API_GET_CURRENCY, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((res) => res.json());
+    }).then((res) => res.json()); 
 };
