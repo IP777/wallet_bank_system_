@@ -17,7 +17,7 @@ const TableTransactionsBrowser = () => (
     </thead>
     <tbody>
       {transactions.map((item) => (
-        <TableRaw props={item} style={style} />
+        <TableRaw props={item} style={style} key={item.id} />
       ))}
     </tbody>
   </table>

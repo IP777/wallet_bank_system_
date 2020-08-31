@@ -10,6 +10,7 @@ const TableTransactionsMobile = () =>
           style.table,
           item.type === '+' ? style.tableIncome : style.tableSpend,
         ].join(' ')}
+        key={item.id}
       >
         <tbody>
           <tr className={style.tableRaw}>
