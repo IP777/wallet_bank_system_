@@ -1,5 +1,6 @@
 import { getCurrencyRequest } from '../../../services/session-api';
 import { setCurrency } from '../../actions/domain/currency';
+import currencyFilter from '../../../services/currencyFilter';
 
 export const getCurrency = () => async (dispatch) => {
   try {
@@ -9,15 +10,8 @@ export const getCurrency = () => async (dispatch) => {
       throw new Error(response.errorDescription);
     }
 
-    const filteredCurrency = response.filter(
-      ({ currencyCodeA, currencyCodeB }) => {
-        return (
-          (currencyCodeA === 840 && currencyCodeB === 980) ||
-          (currencyCodeA === 978 && currencyCodeB === 980) ||
-          (currencyCodeA === 643 && currencyCodeB === 980)
-        );
-      }
-    );
+    const filteredCurrency = currencyFilter(response);
+
     dispatch(setCurrency(filteredCurrency));
   } catch (error) {
     console.log(error);

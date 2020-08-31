@@ -1,19 +1,22 @@
 import React from 'react';
 import style from './TableCurrency.module.css';
+import * as CURRENCY from '../../constants/curency';
 
 const TableCurrency = ({ currency, getCurrency }) => {
-  if (currency.length < 2) {
+  if (!currency) {
     getCurrency();
   }
 
+  console.log(CURRENCY.USD);
+
   const currencyName = (code) => {
     switch (code) {
-      case 840:
-        return 'USD';
-      case 978:
-        return 'EUR';
-      case 643:
-        return 'RUR';
+      case CURRENCY.USD.code:
+        return CURRENCY.USD.name;
+      case CURRENCY.EUR.code:
+        return CURRENCY.EUR.name;
+      case CURRENCY.RUB.code:
+        return CURRENCY.RUB.name;
       default:
         break;
     }
