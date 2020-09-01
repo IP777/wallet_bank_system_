@@ -1,8 +1,8 @@
 import React from 'react';
-import transactions from '../../../templateData/transactions.json';
 import style from './TableTransactionsMobile.module.css';
 
-const TableTransactionsMobile = () =>
+const TableTransactionsMobile = ({ transactions }) =>
+  transactions &&
   transactions.map((item) => {
     return (
       <table
@@ -10,11 +10,12 @@ const TableTransactionsMobile = () =>
           style.table,
           item.type === '+' ? style.tableIncome : style.tableSpend,
         ].join(' ')}
+        key={item._id}
       >
         <tbody>
           <tr className={style.tableRaw}>
             <th className={style.tableHead}>Дата</th>
-            <td className={style.tableCell}>{item.data}</td>
+            <td className={style.tableCell}>{item.date}</td>
           </tr>
           <tr className={style.tableRaw}>
             <th className={style.tableHead}>Тип</th>
@@ -26,7 +27,7 @@ const TableTransactionsMobile = () =>
           </tr>
           <tr className={style.tableRaw}>
             <th className={style.tableHead}>Комментарий</th>
-            <td className={style.tableCell}>{item.comment}</td>
+            <td className={style.tableCell}>{item.comments}</td>
           </tr>
           <tr className={style.tableRaw}>
             <th className={style.tableHead}>Сумма</th>
@@ -43,7 +44,11 @@ const TableTransactionsMobile = () =>
           </tr>
           <tr className={style.tableRaw}>
             <th className={style.tableHead}>Баланс</th>
-            <td className={style.tableCell}>{item.balance}</td>
+            <td className={style.tableCell}>
+              {item.typeBalanceAfter === '-'
+                ? '-' + item.balanceAfter
+                : item.balanceAfter}
+            </td>
           </tr>
         </tbody>
       </table>

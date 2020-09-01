@@ -3,7 +3,7 @@ import React from 'react';
 
 import Header from '../../components/Header/Header';
 
-import TableTransactions from '../../components/TableTransactions/TableTransactions';
+import TableTransactions from '../../containers/Transactions';
 import ModalPage from '../ModalPage/ModalPage';
 
 import BaseLayout from '../../components/BaseLayout/BaseLayout';
