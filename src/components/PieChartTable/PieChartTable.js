@@ -9,9 +9,11 @@ const PieChartTable = ({ data }) => (
         <div className={css.headingTitle}>Категории</div>
         <div className={css.headingValue}>Сумма</div>
       </div>
-      {data.map((item) => (
-        <PieChartItem key={item.title} item={item} />
-      ))}
+      <div className={css.PieChartItems}>
+        {data.map((item) => (
+          <PieChartItem key={item.title} item={item} />
+        ))}
+      </div>
     </div>
     <div className={css.ending}>
       <div className={css.endingTitle}>Расходы:</div>
