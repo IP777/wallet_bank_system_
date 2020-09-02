@@ -1,7 +1,7 @@
 import React from 'react';
 //import style from './HomePage.module.css';
 
-import Header from '../../components/Header/Header';
+import Header from '../../containers/Header';
 
 import TableTransactions from '../../containers/Transactions';
 import ModalPage from '../ModalPage/ModalPage';
