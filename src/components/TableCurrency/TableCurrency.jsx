@@ -7,8 +7,6 @@ const TableCurrency = ({ currency, getCurrency }) => {
     getCurrency();
   }
 
-  console.log(CURRENCY.USD);
-
   const currencyName = (code) => {
     switch (code) {
       case CURRENCY.USD.code:
@@ -34,7 +32,7 @@ const TableCurrency = ({ currency, getCurrency }) => {
       <tbody className={style.tableBody}>
         {currency &&
           currency.map((item) => (
-            <tr className={style.tableRaw} key={item.rateSell}>
+            <tr className={style.tableRaw} key={item.currencyCodeA}>
               <td className={style.tableCell}>
                 {currencyName(item.currencyCodeA)}
               </td>
