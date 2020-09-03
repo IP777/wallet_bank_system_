@@ -54,6 +54,22 @@ export default class ModalPage extends Component {
 
     console.log(this.state.isRenderCategory);
   };
+  handelSubmit = () => {
+    //getTransactions() redux пропса на передачу транзакции на сервер
+    //В нутри заглушка в место нее нужно собрать все данные полей и передать сюда
+    //Заглушка-пример какие нужно передать поля
+    this.props.getTransactions({
+      date: 1553699509960,
+      type: '+ or -',
+      category: 'Job',
+      amount: 2000,
+      balanceAfter: 3000,
+      comments: 'get money by my Job',
+      typeBalanceAfter: '-',
+    });
+
+    this.setState({ open: false });
+  };
   render() {
     const { open, isRenderCategory } = this.state;
 
@@ -110,7 +126,12 @@ export default class ModalPage extends Component {
             className={styles.textArea}
           ></textarea>
 
-          <Button variant="contained" color="primary" className={styles.btn}>
+          <Button
+            variant="contained"
+            color="primary"
+            className={styles.btn}
+            onClick={this.handelSubmit}
+          >
              ДОБАВИТЬ
           </Button>
         </form>

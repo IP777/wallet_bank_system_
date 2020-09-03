@@ -7,7 +7,7 @@ const TableCurrency = ({ currency, getCurrency }) => {
     getCurrency();
   }
 
-  console.log(CURRENCY.USD);
+  //console.log(CURRENCY.USD);
 
   const currencyName = (code) => {
     switch (code) {
@@ -32,7 +32,7 @@ const TableCurrency = ({ currency, getCurrency }) => {
         </tr>
       </thead>
       <tbody className={style.tableBody}>
-        {currency &&
+        {currency ? (
           currency.map((item) => (
             <tr className={style.tableRaw} key={item.rateSell}>
               <td className={style.tableCell}>
@@ -41,7 +41,15 @@ const TableCurrency = ({ currency, getCurrency }) => {
               <td className={style.tableCell}>{item.rateBuy}</td>
               <td className={style.tableCell}>{item.rateSell}</td>
             </tr>
-          ))}
+          ))
+        ) : (
+          // Default params
+          <tr className={style.tableRaw}>
+            <td className={style.tableCell}>-</td>
+            <td className={style.tableCell}>-</td>
+            <td className={style.tableCell}>-</td>
+          </tr>
+        )}
       </tbody>
     </table>
   );

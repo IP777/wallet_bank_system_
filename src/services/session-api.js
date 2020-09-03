@@ -28,3 +28,24 @@ export const getCurrencyRequest = () => {
     },
   }).then((res) => res.json());
 };
+
+export const transactionRequest = (data, userToken, userID) => {
+  //-------Рабочий вариант отправки транзакций раскоментировать когда Swagger заведётся )))
+  // return fetch(`${API_URL}/api/finance/${userID}`, {
+  //   method: 'POST',
+  //   headers: {
+  //     Authorization: 'Bearer ' + userToken,
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify(data),
+  // }).then((res) => res.json());
+
+  //Заглушка для отправки транзакции
+  console.log('userToken---', userToken);
+  console.log('userID', userID);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 300);
+  });
+};
