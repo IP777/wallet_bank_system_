@@ -1,9 +1,8 @@
 import React from 'react';
-import transactions from '../../../templateData/transactions.json';
 import TableRaw from '../TableRaw';
 import style from './TableTransactionsDesctop.module.css';
 
-const TableTransactionsBrowser = () => (
+const TableTransactionsBrowser = ({ transactions }) => (
   <table className={style.table}>
     <thead>
       <tr className={style.tableRaw}>
@@ -16,9 +15,10 @@ const TableTransactionsBrowser = () => (
       </tr>
     </thead>
     <tbody>
-      {transactions.map((item) => (
-        <TableRaw props={item} style={style} />
-      ))}
+      {transactions &&
+        transactions.map((item) => (
+          <TableRaw props={item} style={style} key={item._id} />
+        ))}
     </tbody>
   </table>
 );

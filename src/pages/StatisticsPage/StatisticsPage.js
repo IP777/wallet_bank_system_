@@ -1,17 +1,16 @@
 import React from 'react';
 //import style from './StatisticsPage.module.css';
 import Statistics from '../../components/Statistics/Statistics';
-import Header from '../../components/Header/Header';
-import Navigation from '../../components/Navigation/Navigation';
+import Header from '../../containers/Header';
+import BaseLayout from '../../components/BaseLayout/BaseLayout';
 
 const StatisticsPage = () => {
   return (
     <>
       <Header />
-      {/* Компонент-заглушка удалить после создания нормального */}
-      <Navigation />
-      {/* ------------------------ */}
-      <Statistics />
+      <BaseLayout>
+        <Statistics />
+      </BaseLayout>
     </>
   );
 };

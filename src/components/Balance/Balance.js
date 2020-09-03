@@ -5,7 +5,7 @@ export const Balance = ({ balance }) => {
   return (
     <div className={style.balance}>
       <p>Баланс</p>
-      <span>{balance}</span>
+      <span>{balance.toFixed(2)} грн</span>
     </div>
   );
 };

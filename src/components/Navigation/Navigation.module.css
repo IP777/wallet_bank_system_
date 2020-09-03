@@ -1,0 +1,39 @@
+.nav {
+  width: 312px;
+  border-radius: 4px;
+  background-color: rgb(40, 64, 96);
+  box-shadow: 10px 17.321px 40px 0px rgba(1, 1, 0, 0.15);
+  color: var(--white-color);
+  font-family: 'HelveticaNeueCyr';
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 2;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding: 33px 0;
+}
+
+.navlink {
+  display: block;
+  color: #fff;
+  position: relative;
+  height: 39px;
+  padding-left: 30px;
+}
+
+.navlink:hover {
+  background-color: #3a5374;
+}
+
+.navtext {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  /* transform: translate(-30%, -15%); */
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .nav {
+    display: none;
+  }
+}

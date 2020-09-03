@@ -20,10 +20,12 @@
 /* tablet */
 @media (min-width: 549px) {
   .wrapper {
-    background: url(../../assets/imgs/bg-login-tablet.jpg);
+    background: url(../../assets/imgs/header/bg-login-tablet.jpg) center
+      repeat-x;
   }
   .wrapperReg {
-    background: url(../../assets/imgs/bg-register-tablet.jpg);
+    background: url(../../assets/imgs/header/bg-register-tablet.jpg) center
+      repeat-x;
   }
 }
 /* Desktop */
@@ -39,14 +41,16 @@
     height: 100%;
   }
   .sideBlock {
-    height: 850px;
+    height: 100vh;
     width: 510px;
-    background: url(../../assets/imgs/Wallet-login-desktop.jpg) center no-repeat;
+    background: url(../../assets/imgs/header/Wallet-login-desktop.jpg) center
+        no-repeat,
+      url(../../assets/imgs/header/side-widw-background.jpg) repeat-y;
   }
   .sideBlockReg {
-    height: 850px;
+    height: 100vh;
     width: 510px;
-    background: url(../../assets/imgs/Wallet-registration-desktop.jpg) center
-      no-repeat;
+    background: url(../../assets/imgs/header/Wallet-registration-desktop.jpg)
+      repeat-y center;
   }
 }

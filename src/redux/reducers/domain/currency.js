@@ -1,10 +1,10 @@
-import { SET_TRANSACTIONS } from '../../constants/transactions';
+import { SET_CURRENCY } from '../../constants/currency';
 
 const initialState = '';
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case SET_TRANSACTIONS:
+    case SET_CURRENCY:
       return payload;
 
     default:
@@ -12,4 +12,4 @@ export default (state = initialState, { type, payload }) => {
   }
 };
 
-export const transactionsSelector = (state) => state.domain.transactions;
+export const currencySelector = (state) => state.domain.currency;

@@ -81,9 +81,6 @@ const Loginization = ({ onLogin }) => {
         className={styles.input}
       />
 
-      <Link className={styles.link} to="/">
-        На главную
-      </Link>
       <button type="submit" name="login" className={styles.button}>
         Войти
       </button>
