@@ -1,18 +1,20 @@
-import React from 'react';
-import { Balance } from '../Balance/Balance';
-import Navigation from '../Navigation/Navigation';
-import Currency from '../../containers/Currency';
-import styles from './BaseLayout.module.css';
+import React, { useEffect } from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import BaseLayoutDesktop from './BaseLayoutDesktop/BaseLayoutDesktop';
+import BaseLayoutMobile from './BaseLoyautMobile/BaseLayoutMobile';
 
-export default function BaseLayout({ children }) {
+const BaseLayout = ({ children, isCurrency = true }) => {
+  const isDesktop = useMediaQuery('(min-width:700px)');
+
   return (
-    <div className={styles.container}>
-      <div className={styles.sidebar}>
-        <Navigation />
-        <Balance balance={24000} />
-        <Currency />
-      </div>
-      <div className={styles.main}>{children}</div>
-    </div>
+    <>
+      {isDesktop ? (
+        <BaseLayoutDesktop children={children} isCurrency={isCurrency} />
+      ) : (
+        <BaseLayoutMobile children={children} isMobile={true} />
+      )}
+    </>
   );
-}
+};
+
+export default BaseLayout;

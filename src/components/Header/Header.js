@@ -6,14 +6,16 @@ import style from './Header.module.css';
 const Header = ({ userName, isLoggedIn, logout }) => {
   return (
     <div className={style.wrapper}>
-      <Link className={style.logo} to="/" />
+      <div className={style.container}>
+        <Link className={style.logo} to="/" />
 
-      {isLoggedIn && (
-        <div className={style.btnBlock}>
-          <span className={style.loginBtn}>{userName}</span>
-          <span className={style.logoutBtn} onClick={logout} />
-        </div>
-      )}
+        {isLoggedIn && (
+          <div className={style.btnBlock}>
+            <span className={style.loginBtn}>{userName}</span>
+            <span className={style.logoutBtn} onClick={logout} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

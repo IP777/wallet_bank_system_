@@ -1,6 +1,6 @@
 import React from 'react';
 import TableRaw from '../TableRaw';
-import style from './TableTransactionsDesctop.module.css';
+import style from './TableTransactionsDesktop.module.css';
 
 const TableTransactionsBrowser = ({ transactions }) => (
   <table className={style.table}>

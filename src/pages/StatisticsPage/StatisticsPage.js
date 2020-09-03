@@ -8,7 +8,7 @@ const StatisticsPage = () => {
   return (
     <>
       <Header />
-      <BaseLayout>
+      <BaseLayout isCurrency={false}>
         <Statistics />
       </BaseLayout>
     </>
