@@ -1,4 +1,4 @@
-import { API_URL, API_GET_CURRENCY } from '../constants';
+import { API_URL } from '../constants';
 
 export const loginRequest = (data) => {
   return fetch(`${API_URL}/api/login`, {
@@ -30,7 +30,6 @@ export const getCurrencyRequest = () => {
 };
 
 export const transactionRequest = (data, userToken) => {
-  //-------Рабочий вариант отправки транзакций раскоментировать когда Swagger заведётся )))
   return fetch(`${API_URL}/api/finance/`, {
     method: 'POST',
     headers: {
@@ -39,13 +38,5 @@ export const transactionRequest = (data, userToken) => {
     },
     body: JSON.stringify(data),
   }).then((res) => res.json());
-
-  //Заглушка для отправки транзакции
-  //console.log('userToken---', userToken);
-  //console.log('userID', userID);
-  // return new Promise((resolve) => {
-  //   setTimeout(() => {
-  //     resolve(data);
-  //   }, 300);
-  // });
 };
+

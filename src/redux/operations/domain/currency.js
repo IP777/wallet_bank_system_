@@ -1,4 +1,4 @@
-import { getCurrencyRequest } from '../../../services/session-api';
+import { getCurrencyRequest } from '../../../services/domain-api';
 import { setCurrency } from '../../actions/domain/currency';
 import currencyFilter from '../../../services/currencyFilter';
 
