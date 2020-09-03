@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import { getTransactions } from '../redux/operations/domain/transactions';
-import { transactionsSelector } from '../redux/reducers/domain/transactions';
+import { postTransactions } from '../redux/operations/domain/transaction';
+//import { transactionsSelector } from '../redux/reducers/domain/transactions';
 
 import ModalPage from '../pages/ModalPage/ModalPage';
 
-const mapStateToProps = (state) => ({
-  transactions: transactionsSelector(state),
-});
+// const mapStateToProps = (state) => ({
+//   transactions: transactionsSelector(state),
+// });
 
 const mapDispatchToProps = {
-  getTransactions,
+  postTransactions,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalPage);
+export default connect(null, mapDispatchToProps)(ModalPage);
