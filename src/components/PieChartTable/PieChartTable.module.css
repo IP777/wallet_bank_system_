@@ -44,10 +44,19 @@
   }
 
   .innerWraper {
-    height: 210px;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
+  }
+
+  .PieChartItems {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .PieChartItems:nth-last-child(odd) {
+    /* margin-right: auto; */
+    justify-content: flex-start;
+    /* align-items: flex-start; */
   }
 
   .ending {
