@@ -11,6 +11,7 @@ const currencyFilter = (arr) => {
         currencyCodeB === CURRENCY.UAH.code)
     );
   });
+
   return filteredArr;
 };
 

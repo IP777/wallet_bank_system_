@@ -6,7 +6,6 @@ export default (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_TRANSACTIONS:
       return payload;
-
     default:
       return state;
   }

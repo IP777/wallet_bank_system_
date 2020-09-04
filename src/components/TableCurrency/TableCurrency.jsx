@@ -30,7 +30,7 @@ const TableCurrency = ({ currency, getCurrency }) => {
         </tr>
       </thead>
       <tbody className={style.tableBody}>
-        {currency &&
+        {currency ? (
           currency.map((item) => (
             <tr className={style.tableRaw} key={item.currencyCodeA}>
               <td className={style.tableCell}>
@@ -39,7 +39,15 @@ const TableCurrency = ({ currency, getCurrency }) => {
               <td className={style.tableCell}>{item.rateBuy}</td>
               <td className={style.tableCell}>{item.rateSell}</td>
             </tr>
-          ))}
+          ))
+        ) : (
+          // Default params
+          <tr className={style.tableRaw}>
+            <td className={style.tableCell}>-</td>
+            <td className={style.tableCell}>-</td>
+            <td className={style.tableCell}>-</td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
