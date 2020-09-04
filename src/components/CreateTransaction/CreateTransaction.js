@@ -25,6 +25,16 @@ const CreateTransaction = ({ isRenderCategory, handleClick }) => {
       date: inputDate,
       coments: inputComents,
     });
+
+    this.props.postTransaction({
+      date: 1553699509960,
+      type: '+ or -',
+      category: 'Job',
+      amount: 2000,
+      balanceAfter: 3000,
+      comments: 'get money by my Job',
+      typeBalanceAfter: '-',
+    });
   };
   const onHandleRadioChange = (e) => {
     const value = e.target.value;
