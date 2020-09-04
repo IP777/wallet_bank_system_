@@ -10,7 +10,7 @@ import styles from './CreateTransaction.module.css';
 
 const CreateTransaction = ({ isRenderCategory, handleClick, transferForm }) => {
   const [form, setForm] = useState({});
-  const [radio, setRadio] = useState('+');
+  const [radio, setRadio] = useState('');
   const [category, setCategory] = useState('-');
   const [inputValue, setInputValue] = useState('');
   const [inputDate, setInputDate] = useState('');

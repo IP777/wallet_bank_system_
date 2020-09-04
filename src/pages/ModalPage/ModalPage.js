@@ -26,13 +26,21 @@ export default class ModalPage extends Component {
   };
 
   handelSubmit = (form) => {
-    //Не хватает операции подсчета общего баланса, не обновляется страница таблици баланса.
+    //Hе обновляется страница таблици баланса.
+    const totalResult = () => {
+      console.log(form.type);
+      if (this.state.isRenderCategory) {
+        return this.props.totalBalance - form.amount;
+      }
+      return this.props.totalBalance + form.amount;
+    };
+
     this.props.postTransaction({
       date: Date.parse(form.date),
       type: form.type,
       category: form.category,
       amount: form.amount,
-      balanceAfter: null,
+      balanceAfter: totalResult(),
       comments: form.coments,
       typeBalanceAfter: '-',
     });
