@@ -15,7 +15,7 @@ function PieChartComponent(props) {
     }
     return entry;
   });
-
+  console.log('props', props);
   return (
     <div className={css.wrapper}>
       <div className={css.innerWrapper}>
@@ -47,15 +47,15 @@ function PieChartComponent(props) {
             opacity: 1,
             pointerEvents: 'none',
           }}
-          onClick={(_, index) => {
-            setSelected(index === selected ? undefined : index);
-          }}
-          onMouseOver={(_, index) => {
-            setHovered(index);
-          }}
-          onMouseOut={() => {
-            setHovered(undefined);
-          }}
+          // onClick={(_, index) => {
+          //   setSelected(index === selected ? undefined : index);
+          // }}
+          // onMouseOver={(_, index) => {
+          //   setHovered(index);
+          // }}
+          // onMouseOut={() => {
+          //   setHovered(undefined);
+          // }}
         />
       </div>
     </div>
