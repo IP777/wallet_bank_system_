@@ -23,16 +23,20 @@ export default class ModalPage extends Component {
     } else {
       this.setState({ isRenderCategory: true });
     }
+  };
 
+  handelSubmit = (form) => {
+    //Не хватает операции подсчета общего баланса, не обновляется страница таблици баланса.
     this.props.postTransaction({
-      date: 1553699509960,
-      type: '+ or -',
-      category: 'Job',
-      amount: 2000,
-      balanceAfter: 3000,
-      comments: 'get money by my Job',
+      date: Date.parse(form.date),
+      type: form.type,
+      category: form.category,
+      amount: form.amount,
+      balanceAfter: null,
+      comments: form.coments,
       typeBalanceAfter: '-',
     });
+    this.handleClose();
   };
 
   render() {
@@ -51,6 +55,7 @@ export default class ModalPage extends Component {
           <CreateTransaction
             isRenderCategory={isRenderCategory}
             handleClick={this.handleClick}
+            transferForm={this.handelSubmit}
           />
         </Modal>
       </div>

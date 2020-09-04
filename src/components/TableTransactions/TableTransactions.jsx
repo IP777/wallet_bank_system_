@@ -6,7 +6,7 @@ import TableTransactionsDesctop from './TableTransactionsDesctop/TableTransactio
 
 const TableTransactions = ({ transactions, token, getTransactions }) => {
   useEffect(() => {
-    //getTransactions(token);
+    getTransactions(token);
   }, []);
 
   const isDesktop = useMediaQuery('(min-width:549px)');
@@ -16,8 +16,7 @@ const TableTransactions = ({ transactions, token, getTransactions }) => {
       {isDesktop ? (
         <TableTransactionsDesctop transactions={transactions} />
       ) : (
-        <div />
-        // <TableTransactionsMobile transactions={transactions} />
+        <TableTransactionsMobile transactions={transactions} />
       )}
     </>
   );

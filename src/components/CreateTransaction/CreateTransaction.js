@@ -8,23 +8,27 @@ import Button from '@material-ui/core/Button';
 import { spendingCategoryList } from '../../constants/index';
 import styles from './CreateTransaction.module.css';
 
-const CreateTransaction = ({ isRenderCategory, handleClick }) => {
+const CreateTransaction = ({ isRenderCategory, handleClick, transferForm }) => {
   const [form, setForm] = useState({});
-  const [radio, setRadio] = useState('');
-  const [category, setCategory] = useState('');
+  const [radio, setRadio] = useState('+');
+  const [category, setCategory] = useState('-');
   const [inputValue, setInputValue] = useState('');
   const [inputDate, setInputDate] = useState('');
-  const [inputComents, setInputComents] = useState('');
+  const [inputComents, setInputComents] = useState('No comments.');
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    setForm({
+    const getFormValue = {
       type: radio,
       category,
       amount: inputValue,
       date: inputDate,
       coments: inputComents,
-    });
+    };
+
+    setForm(getFormValue);
+
+    transferForm(getFormValue);
   };
   const onHandleRadioChange = (e) => {
     const value = e.target.value;
@@ -48,7 +52,7 @@ const CreateTransaction = ({ isRenderCategory, handleClick }) => {
     setInputComents(value);
   };
 
-  console.log(form);
+  //console.log(form);
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>ДОБАВИТЬ ТРАНЗАКЦИЮ</h2>
