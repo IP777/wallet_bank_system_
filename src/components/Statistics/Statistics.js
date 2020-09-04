@@ -4,8 +4,11 @@ import {
   MonthSelect,
   YearSelect,
 } from '../TransactionsFilter/TransactionsFilter';
+
+import TransactionFilter from '../../containers/TransactionsFilter';
 import PieChart from '../PieChart/PieChart';
 import PieChartTable from '../PieChartTable/PieChartTable';
+
 import style from './Statistics.module.css';
 import { dateFilterForStatistics } from '../../services/dateFilterForStatistics';
 // import adaptArrOfObjectsForPieChart from '../../services/adaptArrOfObjectsForPieChart';
@@ -70,8 +73,9 @@ function Statistics({ transactions }) {
           </div>
           <div className={style.wrapperFS}>
             <div className={style.filterWrapper}>
-              <MonthSelect />
-              <YearSelect />
+              {/* <MonthSelect />
+              <YearSelect /> */}
+              <TransactionFilter />
             </div>
             <PieChartTable data={data} />
           </div>

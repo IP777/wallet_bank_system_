@@ -3,17 +3,17 @@ import React from 'react';
 
 import Header from '../../containers/Header';
 
-import TableTransactions from '../../containers/Transactions';
-import ModalPage from '../../containers/ModalPage';
+import ModalPage from '../ModalPage/ModalPage';
 
 import BaseLayout from '../../components/BaseLayout/BaseLayout';
+import Currency from '../../containers/Currency';
 
 const HomePage = () => {
   return (
     <>
       <Header />
       <BaseLayout>
-        <TableTransactions />
+        <Currency />
         <ModalPage />
       </BaseLayout>
     </>

@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import filter from './filter';
+
+export default combineReducers({
+  filter,
+});

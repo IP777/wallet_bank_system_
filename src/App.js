@@ -18,6 +18,11 @@ const AsyncStatistics = lazy(() =>
     './pages/StatisticsPage/StatisticsPage.js' /* webpackChunkName: "Statistics-page" */
   )
 );
+const AsyncCurrency = lazy(() =>
+  import(
+    './pages/CurrencyPage/CurrencyPage' /* webpackChunkName: "Login-page" */
+  )
+);
 const AsyncRegistration = lazy(() =>
   import(
     './pages/RegistrationPage/RegistrationPage.js' /* webpackChunkName: "Registration-page" */
@@ -41,6 +46,9 @@ const App = () => {
           </PrivateRoute>
           <PrivateRoute path={ROUTES.STATISTICS_ROUTE}>
             <AsyncStatistics />
+          </PrivateRoute>
+          <PrivateRoute path={ROUTES.CURRENCY_ROUTE}>
+            <AsyncCurrency />
           </PrivateRoute>
           <PrivateRoute path={ROUTES.CREATE_TRANSACTION}>
             <div>CREATE</div>

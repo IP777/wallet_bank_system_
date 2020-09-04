@@ -5,3 +5,7 @@ export const SET_IS_LOADED = 'SET_IS_LOADED';
 
 // LocalStorage
 export const LOCAL_STORAGE_KEY = 'userData';
+
+// filterComponent
+export const SET_YEAR = 'SET_YEAR';
+export const SET_MONTH = 'SET_MONTH';
