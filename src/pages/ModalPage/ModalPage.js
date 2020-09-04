@@ -58,7 +58,7 @@ export default class ModalPage extends Component {
     //getTransactions() redux пропса на передачу транзакции на сервер
     //В нутри заглушка в место нее нужно собрать все данные полей и передать сюда
     //Заглушка-пример какие нужно передать поля
-    this.props.postTransactions({
+    this.props.postTransaction({
       date: 1553699509960,
       type: '+ or -',
       category: 'Job',
