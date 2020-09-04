@@ -1,39 +1,94 @@
 .nav {
-  width: 312px;
-  border-radius: 4px;
-  background-color: rgb(40, 64, 96);
-  box-shadow: 10px 17.321px 40px 0px rgba(1, 1, 0, 0.15);
-  color: var(--white-color);
-  font-family: 'HelveticaNeueCyr';
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 2;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-  padding: 33px 0;
-}
-
-.navlink {
-  display: block;
-  color: #fff;
-  position: relative;
-  height: 39px;
-  padding-left: 30px;
-}
-
-.navlink:hover {
-  background-color: #3a5374;
+  display: flex;
 }
 
 .navtext {
-  position: absolute;
-  left: 20%;
-  top: 15%;
-  /* transform: translate(-30%, -15%); */
+  display: none;
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media (max-width: 699px) {
   .nav {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+  }
+
+  .navlink {
+    width: 31px;
+    height: 26px;
+    background-color: #2a4262;
+    border-radius: 4px;
+    text-align: center;
+    color: #a9b3bf;
+  }
+
+  .navlink:hover {
+    color: #fff;
+    background-color: #66778e;
+  }
+}
+
+@media (min-width: 700px) {
+  .nav {
+    font-family: 'HelveticaNeueCyr', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #6b7d83;
+  }
+
+  .navtext {
+    display: inline;
+  }
+
+  .navlink:visited {
+    color: inherit;
+  }
+
+  .navlink::after {
+    content: '|';
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .navlink {
+    display: flex;
+    align-items: center;
+  }
+
+  .navlink:hover {
+    color: #3a5374;
+  }
+
+  .navicon {
+    padding-right: 12px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .nav {
+    display: block;
+    width: 312px;
+    border-radius: 4px;
+    background-color: rgb(40, 64, 96);
+    box-shadow: 10px 17.321px 40px 0px rgba(1, 1, 0, 0.15);
+    color: var(--white-color);
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 33px 0;
+  }
+
+  .navlink {
+    color: #fff;
+    position: relative;
+    height: 39px;
+    padding-left: 30px;
+  }
+
+  .navlink::after {
+    content: '';
+  }
+
+  .navlink:hover {
+    background-color: #3a5374;
   }
 }
