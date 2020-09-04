@@ -4,7 +4,7 @@ import app from './app';
 import domain from './domain';
 
 export default combineReducers({
-  ui,
+  // ui,
   app,
   domain,
 });

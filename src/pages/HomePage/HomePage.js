@@ -6,6 +6,7 @@ import Header from '../../containers/Header';
 import TableTransactions from '../../components/TableTransactions/TableTransactions';
 import ModalPage from '../../containers/ModalPage';
 
+
 import BaseLayout from '../../components/BaseLayout/BaseLayout';
 
 const HomePage = () => {
