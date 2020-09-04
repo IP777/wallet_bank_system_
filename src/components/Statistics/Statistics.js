@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  MonthSelect,
-  YearSelect,
-} from '../TransactionsFilter/TransactionsFilter';
+import TransactionFilter from '../../containers/TransactionsFilter';
 import style from './Statistics.module.css';
 
 export default function Statistics() {
@@ -16,8 +13,9 @@ export default function Statistics() {
           </div>
           <div className={style.wrapperFS}>
             <div className={style.filterWrapper}>
-              <MonthSelect />
-              <YearSelect />
+              {/* <MonthSelect />
+              <YearSelect /> */}
+              <TransactionFilter />
             </div>
             <div className={style.statistic}>statistics Component here</div>
           </div>
