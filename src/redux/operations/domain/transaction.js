@@ -1,7 +1,7 @@
 import { transactionRequest } from '../../../services/session-api';
 import { LOCAL_STORAGE_KEY } from '../../constants/params';
 
-export const postTransactions = (param) => async () => {
+export const postTransaction = (param) => async () => {
   try {
     const userToken = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)).token;
     const response = await transactionRequest(param, userToken);

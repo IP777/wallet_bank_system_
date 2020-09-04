@@ -23,6 +23,16 @@ export default class ModalPage extends Component {
     } else {
       this.setState({ isRenderCategory: true });
     }
+
+    this.props.postTransaction({
+      date: 1553699509960,
+      type: '+ or -',
+      category: 'Job',
+      amount: 2000,
+      balanceAfter: 3000,
+      comments: 'get money by my Job',
+      typeBalanceAfter: '-',
+    });
   };
 
   render() {

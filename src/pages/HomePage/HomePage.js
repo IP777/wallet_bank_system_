@@ -4,7 +4,7 @@ import React from 'react';
 import Header from '../../containers/Header';
 
 import TableTransactions from '../../components/TableTransactions/TableTransactions';
-import ModalPage from '../ModalPage/ModalPage';
+import ModalPage from '../../containers/ModalPage';
 
 import BaseLayout from '../../components/BaseLayout/BaseLayout';
 
