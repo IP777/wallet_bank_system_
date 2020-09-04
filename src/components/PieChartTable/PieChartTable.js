@@ -23,7 +23,7 @@ const PieChartTable = ({ data }) => (
     </div>
     <div className={css.ending}>
       <div className={css.endingTitle}>Доходы:</div>
-      <div className={css.end}>Доходы с пропса</div>
+      <div className={css.end}>30000</div>
     </div>
   </div>
 );

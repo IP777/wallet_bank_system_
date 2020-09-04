@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-  MonthSelect,
-  YearSelect,
-} from '../TransactionsFilter/TransactionsFilter';
+// import {
+//   MonthSelect,
+//   YearSelect,
+// } from '../TransactionsFilter/TransactionsFilter';
 
-import TransactionFilter from '../../containers/TransactionsFilter';
+// import TransactionFilter from '../../containers/TransactionsFilter';
 import PieChart from '../PieChart/PieChart';
 import PieChartTable from '../PieChartTable/PieChartTable';
 
@@ -75,7 +75,7 @@ function Statistics({ transactions }) {
             <div className={style.filterWrapper}>
               {/* <MonthSelect />
               <YearSelect /> */}
-              <TransactionFilter />
+              {/* <TransactionFilter /> */}
             </div>
             <PieChartTable data={data} />
           </div>
