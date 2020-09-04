@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './Balance.module.css';
 
-export const Balance = ({ balance }) => {
+export const Balance = ({ totalBalance }) => {
   return (
     <div className={style.balance}>
       <p>Баланс</p>
-      <span>{balance.toFixed(2)} грн</span>
+      <span>{totalBalance} грн</span>
     </div>
   );
 };
