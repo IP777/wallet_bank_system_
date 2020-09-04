@@ -1,23 +1,21 @@
 import React from 'react';
 //import style from './HomePage.module.css';
 
-import { Balance } from '../../components/Balance/Balance';
-import Header from '../../components/Header/Header';
-import Navigation from '../../components/Navigation/Navigation';
+import Header from '../../containers/Header';
 
-import TableTransactions from '../../components/TableTransactions/TableTransactions';
-import ModalPage from '../ModalPage/ModalPage';
+import TableTransactions from '../../containers/Transactions';
+import ModalPage from '../../containers/ModalPage';
+
+import BaseLayout from '../../components/BaseLayout/BaseLayout';
 
 const HomePage = () => {
   return (
     <>
       <Header />
-      {/* Компонент-заглушка удалить после создания нормального */}
-      <Navigation />
-      {/* ------------------------ */}
-      <ModalPage />
-      <TableTransactions />
-      <Balance />
+      <BaseLayout>
+        <TableTransactions />
+        <ModalPage />
+      </BaseLayout>
     </>
   );
 };

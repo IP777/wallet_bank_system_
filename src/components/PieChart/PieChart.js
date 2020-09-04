@@ -1,61 +1,65 @@
-import React from 'react';
-import Chart from 'react-google-charts';
+import React, { useState, ComponentProps } from 'react';
+import { PieChart } from 'react-minimal-pie-chart';
 import css from './PieChart.module.css';
 
-const pieOptions = {
-  title: '',
-  pieSliceText: 'label',
-  pieHole: 0,
-  //   slices: [
-  //     {
-  //       color: "#2BB673",
-  //     },
-  //     {
-  //       color: "#d91e48",
-  //     },
-  //     {
-  //       color: "#007fad",
-  //     },
-  //     {
-  //       color: "#e9a227",
-  //     },
-  //   ],
-  legend: {
-    position: 'bottom',
-    alignment: 'center',
-    textStyle: {
-      color: '233238',
-      fontSize: 14,
-    },
-  },
-  tooltip: {
-    showColorCode: true,
-  },
-  chartArea: {
-    left: 10,
-    top: 10,
-    width: '90%',
-    height: '90%',
-    position: 'center',
-  },
-  fontName: 'Roboto',
-};
-const PieChart = ({ chartData }) => {
+function PieChartComponent(props) {
+  const [selected, setSelected] = useState(0);
+  const [hovered, setHovered] = useState(undefined);
+
+  const data = props.data.map((entry, i) => {
+    if (hovered === i) {
+      return {
+        ...entry,
+        color: 'grey',
+      };
+    }
+    return entry;
+  });
+
   return (
-    <div className={css.PieContainer}>
-      <Chart
-        className={css.chart}
-        // className={css.pieChart}
-        chartType="PieChart"
-        data={chartData}
-        options={pieOptions}
-        graph_id="PieChart"
-        width={'100%'}
-        height={'500px'}
-        legend_toggle
-      />
+    <div className={css.wrapper}>
+      <div className={css.innerWrapper}>
+        <PieChart
+          style={{
+            fontFamily:
+              '"Myriad Pro", -apple-system, Helvetica, Arial, sans-serif',
+            fontSize: '8px',
+            fontWeight: '200',
+            display: 'flex',
+            justifyContent: 'center',
+            alignSelf: 'center',
+          }}
+          center={[50, 50]}
+          viewBoxSize={[100, 100]}
+          data={data}
+          startAngle={0}
+          radius={PieChart.defaultProps.radius}
+          segmentsStyle={{
+            transition: 'stroke .3s',
+            cursor: 'pointer',
+          }}
+          segmentsShift={0.3}
+          animate
+          label={({ dataEntry }) => dataEntry.title}
+          labelPosition={70}
+          labelStyle={{
+            fill: '#fff',
+            opacity: 1,
+            pointerEvents: 'none',
+          }}
+          onClick={(_, index) => {
+            setSelected(index === selected ? undefined : index);
+          }}
+          onMouseOver={(_, index) => {
+            setHovered(index);
+          }}
+          onMouseOut={() => {
+            setHovered(undefined);
+          }}
+        />
+      </div>
     </div>
   );
-};
+}
 
-export default PieChart;
+export default PieChartComponent;
