@@ -1,4 +1,4 @@
-import { API_URL } from '../constants';
+import { API_URL, API_GET_CURRENCY } from '../constants';
 
 export const loginRequest = (data) => {
   return fetch(`${API_URL}/api/login`, {
@@ -39,4 +39,3 @@ export const transactionRequest = (data, userToken) => {
     body: JSON.stringify(data),
   }).then((res) => res.json());
 };
-
