@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   MonthSelect,
   YearSelect,
@@ -7,8 +8,12 @@ import PieChart from '../PieChart/PieChart';
 import PieChartTable from '../PieChartTable/PieChartTable';
 import style from './Statistics.module.css';
 import { dateFilterForStatistics } from '../../services/dateFilterForStatistics';
+// import adaptArrOfObjectsForPieChart from '../../services/adaptArrOfObjectsForPieChart';
+import colorGenerator from '../../services/colorGenerator';
 
-export default function Statistics() {
+function Statistics({ transactions }) {
+  console.log('transactions', transactions);
+
   const dataChart = [
     {
       title: 'one',
@@ -46,80 +51,38 @@ export default function Statistics() {
         year: 2020,
       },
     },
-    {
-      title: 'five',
-      value: 20,
-      color: '#000',
-      createdAt: {
-        mounth: 6,
-        year: 2020,
-      },
-    },
-    {
-      title: 'six',
-      value: 20,
-      color: '#000',
-      createdAt: {
-        mounth: 6,
-        year: 2020,
-      },
-    },
-    {
-      title: 'seven',
-      value: 20,
-      color: '#000',
-      createdAt: {
-        mounth: 4,
-        year: 2020,
-      },
-    },
-    {
-      title: 'eight',
-      value: 20,
-      color: '#000',
-      createdAt: {
-        mounth: 4,
-        year: 2020,
-      },
-    },
-    {
-      title: 'nine',
-      value: 20,
-      color: '#000',
-      createdAt: {
-        mounth: 3,
-        year: 2020,
-      },
-    },
-    {
-      title: 'ten',
-      value: 20,
-      color: '#000',
-      createdAt: {
-        mounth: 3,
-        year: 2020,
-      },
-    },
   ];
-  const result = dateFilterForStatistics(dataChart);
-  console.log(result);
+  const data = transactions
+    ? transactions.map((transaction) => ({
+        title: transaction.category,
+        value: transaction.amount,
+        color: colorGenerator(),
+        ...transaction.date,
+      }))
+    : dataChart;
   return (
     <React.Fragment>
       <div className={style.mainWrapper}>
         <div className={style.header}>Статистика</div>
         <div className={style.wrapper}>
           <div className={style.wrapperDiagramme}>
-            <PieChart data={result} />
+            <PieChart data={data} />
           </div>
           <div className={style.wrapperFS}>
             <div className={style.filterWrapper}>
               <MonthSelect />
               <YearSelect />
             </div>
-            <PieChartTable data={result} />
+            <PieChartTable data={data} />
           </div>
         </div>
       </div>
     </React.Fragment>
   );
 }
+
+const mapStateToProps = (state) => ({
+  transactions: state.domain.transactions,
+});
+
+export default connect(mapStateToProps, null)(Statistics);
