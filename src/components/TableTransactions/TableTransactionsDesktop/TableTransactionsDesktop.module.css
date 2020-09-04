@@ -1,0 +1,55 @@
+.table {
+  width: 100%;
+  font-family: 'HelveticaNeueCyr', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #282828;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  text-align: left;
+  padding: 0 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tableRaw {
+  height: 45px;
+}
+
+.tableRaw:nth-child(even) {
+  background-color: #f3f6f6;
+}
+
+.tableCell {
+  padding: 0 14px;
+}
+
+.tableAmountIncome {
+  color: #3a5374;
+  font-weight: 700;
+}
+
+.tableAmountSpend {
+  color: #e08a20;
+  font-weight: 700;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* .tableHead:nth-child(1) {
+    padding-left: 0;
+  } */
+
+  .tableHead:last-child {
+    text-align: right;
+  }
+
+  /* .tableCell:nth-child(1) {
+    padding-left: 0;
+  } */
+
+  .tableCell:last-child {
+    text-align: right;
+  }
+}

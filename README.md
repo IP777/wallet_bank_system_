@@ -1,6 +1,6 @@
 https://wallet-bank-system.netlify.app
 
-# wallet*bank_system*
+# wallet_bank_system
 
 Локальный старт проекта
 

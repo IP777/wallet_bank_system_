@@ -1,0 +1,66 @@
+.wraper {
+  padding-bottom: 20px;
+}
+
+.innerWraper {
+  border-bottom: 2px solid #b5c5d0;
+}
+
+.heading,
+.ending {
+  margin: 0 auto;
+  width: 320px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  height: 50px;
+  background-color: #f3f6f6;
+}
+
+.color {
+  width: 15px;
+  height: 15px;
+  margin-right: 20px;
+}
+
+.headingTitle,
+.headingValue,
+.endingTitle,
+.endingValue {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.endingValue {
+  color: #ff6c00;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heading {
+    display: none;
+  }
+
+  .innerWraper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .PieChartItems {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .PieChartItems:nth-last-child(odd) {
+    /* margin-right: auto; */
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+  }
+
+  .ending {
+    justify-content: space-between;
+    margin: 0 0 0 auto;
+  }
+}
