@@ -21,6 +21,7 @@ function MonthSelect() {
 
   const handleChange = (event) => {
     setPeriod(event.target.value);
+    localStorage.setItem('month', event.target.value);
   };
 
   return (
@@ -61,6 +62,7 @@ function YearSelect() {
 
   const handleChange = (event) => {
     setPeriod(event.target.value);
+    localStorage.setItem('year', event.target.value);
   };
 
   return (
@@ -77,10 +79,10 @@ function YearSelect() {
           <MenuItem value="Год">
             <em>Год</em>
           </MenuItem>
-          <MenuItem value={2010}>2000</MenuItem>
-          <MenuItem value={2011}>2000</MenuItem>
-          <MenuItem value={2012}>2000</MenuItem>
-          <MenuItem value={2013}>2000</MenuItem>
+          <MenuItem value={2010}>2010</MenuItem>
+          <MenuItem value={2011}>2011</MenuItem>
+          <MenuItem value={2012}>2012</MenuItem>
+          <MenuItem value={2013}>2013</MenuItem>
           <MenuItem value={2014}>2014</MenuItem>
           <MenuItem value={2015}>2015</MenuItem>
           <MenuItem value={2016}>2016</MenuItem>
@@ -96,4 +98,11 @@ function YearSelect() {
   );
 }
 
-export { MonthSelect, YearSelect };
+export default function TransactionFilter() {
+  return (
+    <>
+      <MonthSelect />
+      <YearSelect />
+    </>
+  );
+}

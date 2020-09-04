@@ -1,10 +1,9 @@
 import React from 'react';
-import {
-  MonthSelect,
-  YearSelect,
-} from '../TransactionsFilter/TransactionsFilter';
+
+import TransactionFilter from '../../containers/TransactionsFilter';
 import PieChart from '../PieChart/PieChart';
 import PieChartTable from '../PieChartTable/PieChartTable';
+
 import style from './Statistics.module.css';
 import { dateFilterForStatistics } from '../../services/dateFilterForStatistics';
 
@@ -113,8 +112,9 @@ export default function Statistics() {
           </div>
           <div className={style.wrapperFS}>
             <div className={style.filterWrapper}>
-              <MonthSelect />
-              <YearSelect />
+              {/* <MonthSelect />
+              <YearSelect /> */}
+              <TransactionFilter />
             </div>
             <PieChartTable data={result} />
           </div>
