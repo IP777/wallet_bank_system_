@@ -5,7 +5,7 @@ import Loginization from '../../containers/Loginization';
 
 const LoginPage = () => {
   return (
-    <EmptyLayout>
+    <EmptyLayout page={'login'}>
       <Loginization />
     </EmptyLayout>
   );

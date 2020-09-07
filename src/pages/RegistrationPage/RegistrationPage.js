@@ -4,7 +4,7 @@ import Registration from '../../containers/Registartion';
 
 const RegistrationPage = () => {
   return (
-    <EmptyLayout>
+    <EmptyLayout page={'registration'}>
       <Registration />
     </EmptyLayout>
   );

@@ -1,10 +1,9 @@
 import React from 'react';
 import style from './EmptyLayout.module.css';
 
-const EmptyLayout = ({ children }) => {
-  //Проверяет содержет ли название children компонента login
-  //В связи с этим меняет стили layout
-  const checkParent = children._source.fileName.toLowerCase().includes('login');
+const EmptyLayout = ({ children, page }) => {
+  const checkParent = page.toLowerCase().includes('login');
+  console.log(checkParent);
 
   return (
     <div className={checkParent ? style.wrapper : style.wrapperReg}>
