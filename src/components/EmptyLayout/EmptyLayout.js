@@ -3,7 +3,6 @@ import style from './EmptyLayout.module.css';
 
 const EmptyLayout = ({ children, page }) => {
   const checkParent = page.toLowerCase().includes('login');
-  console.log(checkParent);
 
   return (
     <div className={checkParent ? style.wrapper : style.wrapperReg}>

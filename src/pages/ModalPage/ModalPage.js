@@ -27,9 +27,10 @@ export default class ModalPage extends Component {
 
   handelSubmit = (form) => {
     //Hе обновляется страница таблици баланса.
+    const typeAmount = this.state.isRenderCategory;
+
     const totalResult = () => {
-      console.log(form.type);
-      if (this.state.isRenderCategory) {
+      if (typeAmount) {
         return this.props.totalBalance - form.amount;
       }
       return this.props.totalBalance + form.amount;
@@ -39,10 +40,10 @@ export default class ModalPage extends Component {
       date: Date.parse(form.date),
       type: form.type,
       category: form.category,
-      amount: form.amount,
+      amount: typeAmount ? -form.amount : form.amount,
       balanceAfter: totalResult(),
       comments: form.coments,
-      typeBalanceAfter: '-',
+      typeBalanceAfter: this.props.totalBalance > 0 && '+',
     });
     this.handleClose();
   };

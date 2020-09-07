@@ -5,6 +5,9 @@
 .navtext {
   display: none;
 }
+.navlink {
+  line-height: 30px;
+}
 
 @media (max-width: 699px) {
   .nav {
@@ -80,8 +83,9 @@
   .navlink {
     color: #fff;
     position: relative;
-    height: 39px;
     padding-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .navlink::after {
@@ -89,6 +93,6 @@
   }
 
   .navlink:hover {
-    background-color: #3a5374;
+    color: #95a1b1;
   }
 }

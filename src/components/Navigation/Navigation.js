@@ -10,7 +10,7 @@ const Navigation = ({ isMobile }) => {
   return (
     <div className={style.nav}>
       <Link
-        color="inherit"
+        // color="inherit"
         href={ROUTES.ROOT_ROUTE}
         to={ROUTES.ROOT_ROUTE}
         className={style.navlink}
@@ -19,7 +19,7 @@ const Navigation = ({ isMobile }) => {
         <span className={style.navtext}>Главная</span>
       </Link>
       <Link
-        color="inherit"
+        //color="inherit"
         href={ROUTES.STATISTICS_ROUTE}
         to={ROUTES.STATISTICS_ROUTE}
         className={style.navlink}
